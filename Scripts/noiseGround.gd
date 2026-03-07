@@ -23,7 +23,7 @@ func _ready():
 	ground = $Ground
 	sky = $Sky
 	player = $Player
-	player.position = Vector2(100, 0)
+	player.position = Vector2(500, 0)
 
 func _process(_delta):
 	if int((player.position.x + generation_distance)/tile_size) > int (last_generated_x/tile_size):
