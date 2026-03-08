@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw8ten5t0q6hq"]
+[gd_scene load_steps=15 format=3 uid="uid://dw8ten5t0q6hq"]
 
 [ext_resource type="Script" uid="uid://ce3stt6nsltym" path="res://Scripts/PlayerScript.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://k6bbofpoxp56" path="res://Assets/Characters/idle.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://drns1n656p8op" path="res://Assets/Characters/walk.png" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 
@@ -21,6 +22,26 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("2_cvnsp")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
+atlas = ExtResource("3_6t5aa")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("3_6t5aa")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
+atlas = ExtResource("3_6t5aa")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
+atlas = ExtResource("3_6t5aa")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
+atlas = ExtResource("3_6t5aa")
+region = Rect2(128, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_3smsa"]
 animations = [{
 "frames": [{
@@ -37,13 +58,34 @@ animations = [{
 "texture": SubResource("AtlasTexture_fkybt")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8erm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ek2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx1dd")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite")]
 scale = Vector2(2, 2)
 script = ExtResource("1_cvnsp")
+animated_sprite = NodePath("PlayerSprite")
 
 [node name="PlayerShape" type="CollisionShape2D" parent="."]
 position = Vector2(0.83, 0.375)
@@ -52,8 +94,8 @@ shape = SubResource("CapsuleShape2D_cvnsp")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 physics_interpolation_mode = 2
 sprite_frames = SubResource("SpriteFrames_3smsa")
-autoplay = "default"
-frame_progress = 0.092801936
+animation = &"walk"
+autoplay = "walk"
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 position_smoothing_enabled = true
