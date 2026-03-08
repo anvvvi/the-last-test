@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckqhf1cbdluqo"]
+
+[ext_resource type="Texture2D" uid="uid://cf52p1edfe4vg" path="res://Assets/Tiles/hol2.png" id="1_rkv18"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3m1o"]
+size = Vector2(319, 11)
+
+[node name="Halllway2" type="StaticBody2D"]
+
+[node name="Hallway2Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_rkv18")
+
+[node name="Hallway2Shape1" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 47.5)
+shape = SubResource("RectangleShape2D_w3m1o")
+
+[node name="Hallway2Shape2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-160, -41, -40, -41, -40, -160, -54, -160, -54, -53, -160, -53)
+
+[node name="Hallway2Shape3" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(43, -41, 160, -41, 160, -53, 52, -52, 52, -160, 44, -160)

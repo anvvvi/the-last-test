@@ -2,7 +2,7 @@ extends CharacterBody2D
 const SPEED = 300
 const AIR_SPEED = 150        # Lower speed while airborne
 const GRAVITY = 1100
-const JUMP_FORCE = -300
+const JUMP_FORCE = -400
 const COYOTE_TIME = 0.12     
 const JUMP_BUFFER_TIME = 0.12  
 var coyote_timer = 0.0

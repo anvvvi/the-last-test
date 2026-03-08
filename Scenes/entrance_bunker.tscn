@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://drskynmvuskdl"]
+
+[ext_resource type="Texture2D" uid="uid://dspuiscn740fi" path="res://Assets/Tiles/intrarebuncar.png" id="1_u8c12"]
+
+[node name="EntranceBunker" type="Node2D"]
+
+[node name="BunkerSprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_u8c12")

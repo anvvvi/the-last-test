@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://gpaaevjj8wfk"]
+[gd_scene load_steps=11 format=3 uid="uid://gpaaevjj8wfk"]
 
 [ext_resource type="Script" uid="uid://2yqm6e1l61t2" path="res://Scripts/noiseGround.gd" id="1_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://bv6k0tyvot4gj" path="res://Assets/Tiles/groundTileMap.png" id="2_bo1nx"]
@@ -59,7 +59,37 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_kry3j"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_jjvhh")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kry3j"]
+texture = ExtResource("3_8gbba")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_21xkr"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 4
+sources/0 = SubResource("TileSetAtlasSource_kry3j")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_bo1nx")
@@ -71,4 +101,8 @@ tile_set = SubResource("TileSet_jjvhh")
 tile_set = SubResource("TileSet_kry3j")
 
 [node name="Player" parent="." instance=ExtResource("2_jjvhh")]
-position = Vector2(92, 65)
+
+[node name="Clouds" type="TileMapLayer" parent="."]
+light_mask = 2
+visibility_layer = 2
+tile_set = SubResource("TileSet_21xkr")
