@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://drskynmvuskdl"]
+[gd_scene load_steps=4 format=3 uid="uid://drskynmvuskdl"]
 
 [ext_resource type="Texture2D" uid="uid://dspuiscn740fi" path="res://Assets/Tiles/intrarebuncar.png" id="1_u8c12"]
+[ext_resource type="Script" uid="uid://roajar0ov37e" path="res://Scripts/underground.gd" id="2_cfl3o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nug63"]
+size = Vector2(50, 56)
 
 [node name="EntranceBunker" type="Node2D"]
 
 [node name="BunkerSprite" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("1_u8c12")
+
+[node name="BukerArea" type="Area2D" parent="."]
+script = ExtResource("2_cfl3o")
+
+[node name="BunkerShape" type="CollisionShape2D" parent="BukerArea"]
+position = Vector2(-2, 4)
+shape = SubResource("RectangleShape2D_nug63")

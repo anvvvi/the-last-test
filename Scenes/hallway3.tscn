@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://br2nnwau8rwie" path="res://Assets/Tiles/hol3.png" id="1_s7jww"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qdbpn"]
-distance = 43.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7jww"]
+size = Vector2(320, 11)
 
 [node name="Hallway3" type="StaticBody2D"]
 
@@ -12,7 +12,8 @@ rotation = 3.1415927
 texture = ExtResource("1_s7jww")
 
 [node name="Hallway3Shape1" type="CollisionShape2D" parent="."]
-shape = SubResource("WorldBoundaryShape2D_qdbpn")
+position = Vector2(0, -47.5)
+shape = SubResource("RectangleShape2D_s7jww")
 
 [node name="Hallway3Shape2" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-160, 41, -43, 41, -43, 160, -52, 160, -52, 52, -160, 52)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvkn7r7j6flw6"]
+
+[ext_resource type="Script" uid="uid://28ybcv0i1kr0" path="res://Scripts/Bunker.gd" id="1_lthij"]
+[ext_resource type="Texture2D" uid="uid://bv6k0tyvot4gj" path="res://Assets/Tiles/groundTileMap.png" id="2_1lloq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jvn8g"]
+texture = ExtResource("2_1lloq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rcpel"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_jvn8g")
+
+[node name="Underground" type="Node2D"]
+script = ExtResource("1_lthij")
+
+[node name="Dirt" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_rcpel")

@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2ed54hgb6wuy"]
+
+[ext_resource type="Texture2D" uid="uid://d37unll7alpdt" path="res://Assets/Tiles/camera2.png" id="1_6qrli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qrli"]
+size = Vector2(320, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrjev"]
+size = Vector2(319, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_limdr"]
+size = Vector2(304, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjn56"]
+size = Vector2(11, 117)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2s5g"]
+size = Vector2(11, 118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl1m8"]
+size = Vector2(119, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53ype"]
+size = Vector2(103, 57)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6qrli")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-154, 0)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_6qrli")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -154.5)
+shape = SubResource("RectangleShape2D_mrjev")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(4, 154.5)
+rotation = -3.1415925
+shape = SubResource("RectangleShape2D_limdr")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(154.5, -101.5)
+shape = SubResource("RectangleShape2D_mjn56")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(154.5, 101)
+shape = SubResource("RectangleShape2D_b2s5g")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(-84.5, 106)
+shape = SubResource("RectangleShape2D_dl1m8")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(-65.5, -82.5)
+shape = SubResource("RectangleShape2D_53ype")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(45, -148, 45, -122, 52, -112, 87, -111, 86, -87, 96, -69, 148, -67, 147, -149)
