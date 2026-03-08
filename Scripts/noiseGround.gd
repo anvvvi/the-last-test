@@ -9,6 +9,7 @@ var min_height = -10
 var width = 20
 var player
 var listOfHeights = {}  # Changed to Dictionary to support negative x keys
+var lastEntrance = 0
 
 const skyHeight = -200
 const groundHeight = 200
@@ -32,6 +33,7 @@ func _ready():
 	clouds = $Clouds
 	generate_terrain_from(last_generated_x, last_generated_x + generation_distance)
 	# Place player on top of tile after terrain is generated
+	#player.z_index = 10
 	var player_tile_x = 0
 	var ground_y = listOfHeights[player_tile_x]
 	player.position = Vector2(player_tile_x * tile_size, ground_y * tile_size - tile_size)
@@ -102,8 +104,10 @@ func smoothing(start_x: int, end_x: int):
 				listOfHeights[x] -= 1
 				x += 2
 		var chanche_of_entrance = randi_range(0,100)
-		if listOfHeights[x] == listOfHeights[x+1] && listOfHeights[x] == listOfHeights[x-1] && chanche_of_entrance < 20:
+		if listOfHeights[x] == listOfHeights[x+1] && listOfHeights[x] == listOfHeights[x-1] && chanche_of_entrance < 20 && abs(lastEntrance - x) > 100:
 			load_entrance(x*tile_size , listOfHeights[x] * tile_size - tile_size)
+			lastEntrance = x
+			print("generted")
 
 func place_tiles(start_x: int, end_x: int):
 	var tileNumber = last_tile

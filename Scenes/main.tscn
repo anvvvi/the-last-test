@@ -100,9 +100,10 @@ tile_set = SubResource("TileSet_jjvhh")
 [node name="Sky" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_kry3j")
 
-[node name="Player" parent="." instance=ExtResource("2_jjvhh")]
-
 [node name="Clouds" type="TileMapLayer" parent="."]
 light_mask = 2
 visibility_layer = 2
 tile_set = SubResource("TileSet_21xkr")
+
+[node name="Player" parent="." instance=ExtResource("2_jjvhh")]
+z_index = 10
